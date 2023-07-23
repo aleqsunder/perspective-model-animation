@@ -1,3 +1,7 @@
 # perspective-model-animation
-`yarn install`\
+Preview: https://aleq.space/
+
+`yarn install`
+
 `vite build`
+

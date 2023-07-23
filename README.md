@@ -1,3 +1,3 @@
 # perspective-model-animation
-`yarn install`
+`yarn install`\
 `vite build`

@@ -1,27 +1,27 @@
 .steve-body {
   &__animation-backflip & {
     &__torso {
-      animation: backflip-torso 1.7s linear infinite;
+      animation: backflip-torso calc(1.7s * var(--animation-multiplier)) linear infinite;
     }
 
     &__right-leg {
-      animation: backflip-right-leg 1.7s ease-in infinite;
+      animation: backflip-right-leg calc(1.7s * var(--animation-multiplier)) ease-in infinite;
     }
 
     &__left-leg {
-      animation: backflip-left-leg 1.7s ease-in infinite;
+      animation: backflip-left-leg calc(1.7s * var(--animation-multiplier)) ease-in infinite;
     }
 
     &__right-hand {
-      animation: backflip-right-hand 1.7s ease-in infinite;
+      animation: backflip-right-hand calc(1.7s * var(--animation-multiplier)) ease-in infinite;
     }
 
     &__left-hand {
-      animation: backflip-left-hand 1.7s ease-in infinite;
+      animation: backflip-left-hand calc(1.7s * var(--animation-multiplier)) ease-in infinite;
     }
 
     &__head {
-      animation: nodding 3s ease-in-out infinite;
+      animation: nodding calc(3s * var(--animation-multiplier)) ease-in-out infinite;
     }
   }
 }

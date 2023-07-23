@@ -1,13 +1,19 @@
 import './assets/style/index.scss'
 
 const availableSkins = [
-    'default', 'injuredsteve', 'afroamerican',
-    'chad', 'woman', 'pig'
+    {name: 'default', chance: 0.8},
+    {name: 'injuredsteve', chance: 0.6},
+    {name: 'afroamerican', chance: 0.6},
+    {name: 'woman', chance: 0.5},
+    {name: 'chad', chance: 0.25},
+    {name: 'pig', chance: 0.25}
 ]
 
 const availableAnimations = [
-    'nodding', 'hello', 'backflip',
-    'scratch-nose'
+    {name: 'nodding', chance: 0.5},
+    {name: 'hello', chance: 0.25},
+    {name: 'backflip', chance: 0.06},
+    {name: 'scratch-nose', chance: 0.1}
 ]
 
 function main() {
@@ -32,8 +38,9 @@ function generateStevesInCircle(count) {
 }
 
 function generateSteveElement(index) {
-    const randomSkin = availableSkins[Math.random() * availableSkins.length ^ 0]
-    const randomAnimation = availableAnimations[Math.random() * availableAnimations.length ^ 0]
+    const randomSkin = accumulateRandomChance(availableSkins)
+    const randomAnimation = accumulateRandomChance(availableAnimations)
+    const intervalAnimationMultiplier = ((0.75 + Math.random() / 2) * 100 ^ 0) / 100 // from 0.75 to 1.25
     
     const steve = document.createElement('div')
     steve.classList.add('steve')
@@ -41,7 +48,7 @@ function generateSteveElement(index) {
     steve.style.setProperty('--item-id', index + 1)
     
     steve.innerHTML = `
-        <div class="steve-body steve-body__animation-${randomAnimation}">
+        <div class="steve-body steve-body__animation-${randomAnimation}" style="--animation-multiplier: ${intervalAnimationMultiplier}">
           <div class="steve-body__torso" data-add-sides>
             <div class="steve-body__head" data-add-sides></div>
             <div class="steve-body__right-hand" data-add-sides></div>
@@ -63,6 +70,18 @@ function addSides(item) {
         
         item.append(sideElement)
     }
+}
+
+function accumulateRandomChance(items) {
+    const sumOfChances = items.reduce((acc, current) => (acc += current.chance, acc), 0.0)
+    const random = Math.random() * sumOfChances
+    
+    let index = 0
+    for (let order = items[0].chance; order <= random; order += items[index].chance) {
+        index++
+    }
+    
+    return items[index].name
 }
 
 main()

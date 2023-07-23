@@ -1,11 +1,11 @@
 .steve-body {
   &__animation-scratch-nose & {
     &__head {
-      animation: scratch-nose-head 2.3s ease-in-out infinite;
+      animation: scratch-nose-head calc(2.3s * var(--animation-multiplier)) ease-in-out infinite;
     }
 
     &__right-hand {
-      animation: scratch-nose-right-head 2.3s ease-in-out infinite;
+      animation: scratch-nose-right-head calc(2.3s * var(--animation-multiplier)) ease-in-out infinite;
     }
   }
 }

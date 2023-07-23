@@ -1,7 +1,7 @@
 .steve-body {
   &__animation-nodding & {
     &__head {
-      animation: nodding 3s ease-in-out infinite;
+      animation: nodding calc(3s * var(--animation-multiplier)) ease-in-out infinite;
     }
   }
 }

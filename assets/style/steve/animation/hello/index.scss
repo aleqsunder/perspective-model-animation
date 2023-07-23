@@ -1,7 +1,7 @@
 .steve-body {
   &__animation-hello & {
     &__right-hand {
-      animation: hello 1.8s ease-in-out infinite;
+      animation: hello calc(1.8s * var(--animation-multiplier)) ease-in-out infinite;
     }
   }
 }

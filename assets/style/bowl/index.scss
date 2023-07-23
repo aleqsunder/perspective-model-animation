@@ -1,0 +1,112 @@
+.bowl {
+  transform-style: preserve-3d;
+  image-rendering: pixelated;
+
+  transform: translateX(7rem) translateY(12rem) translateZ(10rem) rotateY(22deg);
+
+  &-side {
+    width: 2rem;
+    height: 2rem;
+
+    background: url("/bowl.png") no-repeat;
+    background-size: 8rem 16rem;
+    position: absolute;
+
+    &-front {
+      transform: rotateX(0deg) translateZ(-4rem);
+      width: 8rem;
+      background-position: 0rem -2rem;
+    }
+
+    &-top {
+      transform: rotateX(270deg) translateZ(-4rem);
+      background: transparent;
+    }
+
+    &-left {
+      transform: rotateY(-90deg) translateZ(4rem);
+      width: 8rem;
+      background-position: 0rem -12rem;
+    }
+
+    &-bottom {
+      transform: rotateX(90deg) translateZ(2rem);
+      width: 8rem;
+      height: 8rem;
+      background-position: 0rem -4rem;
+    }
+
+    &-right {
+      transform: rotateY(90deg) translateZ(4rem);
+      width: 8rem;
+      background-position: 0rem -14rem;
+    }
+
+    &-back {
+      transform: rotateY(0deg) translateZ(4rem);
+      width: 8rem;
+    }
+  }
+
+  .apple {
+    position: absolute;
+    transform: rotateY(calc((360deg / var(--items-count)) * var(--item-id))) translateZ(600px);
+    transform-style: preserve-3d;
+    transform-origin: center;
+
+    &:nth-child(1) {
+      transform: translateX(4rem) translateZ(2rem) rotateX(36deg) rotateZ(25deg);
+    }
+
+    &:nth-child(2) {
+      transform: translateX(5rem) translateZ(1rem) rotateX(-12deg) rotateZ(36deg);
+    }
+
+    &:nth-child(3) {
+      transform: translateX(2rem) translateZ(1rem) rotateX(0deg) rotateZ(0deg);
+    }
+
+    &-side {
+      width: 2rem;
+      height: 2rem;
+
+      position: absolute;
+      background: url("/apple.png") no-repeat;
+      background-size: 8rem 8rem;
+
+      &-front {
+        transform: rotateX(0deg) translateZ(-1rem);
+        background-position: -2rem -2rem;
+      }
+
+      &-top {
+        transform: rotateX(270deg) translateZ(-1rem);
+        background-position: -2rem -0rem;
+      }
+
+      &-left {
+        transform: rotateY(-90deg) translateZ(1rem);
+        background-position: 0rem -2rem;
+      }
+
+      &-bottom {
+        transform: rotateX(90deg) translateZ(-1rem);
+        background-position: -2rem -4rem;
+      }
+
+      &-right {
+        transform: rotateY(90deg) translateZ(1rem);
+        background-position: -4rem -2rem;
+      }
+
+      &-back {
+        transform: rotateY(0deg) translateZ(1rem);
+        background-position: -2rem -6rem;
+      }
+    }
+  }
+
+  &-second {
+    transform: translateX(-17rem) translateY(12rem) translateZ(3rem) rotateY(-45deg);
+  }
+}

@@ -9,7 +9,7 @@ html, body {
 
   font-family: monospace;
 
-  background-color: #998bb2;
+  background-color: #17191a;
 }
 
 @keyframes rotate {
@@ -55,5 +55,6 @@ html, body {
   transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-17rem);
 }
 
-@import "steve";
+@import 'bowl';
+@import 'steve';
 @import 'steve/animation';

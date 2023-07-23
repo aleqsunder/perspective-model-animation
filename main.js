@@ -11,17 +11,28 @@ const availableSkins = [
 
 const availableAnimations = [
     {name: 'nodding', chance: 0.5},
-    {name: 'hello', chance: 0.25},
+    {name: 'hello', chance: 0.5},
+    {name: 'sitting', chance: 0.25},
     {name: 'backflip', chance: 0.06},
     {name: 'scratch-nose', chance: 0.1}
 ]
 
 function main() {
-    generateStevesInCircle(12)
+    generateStevesInCircle(8 + (Math.random() * 4 ^ 0))
     
-    const items = document.querySelectorAll('[data-add-sides]')
+    const items = document.querySelectorAll('[data-add-sides="steve"]')
     for (let item of items) {
         addSides(item)
+    }
+    
+    const bowles = document.querySelectorAll('[data-add-sides="bowl"]')
+    for (let bowl of bowles) {
+        addSides(bowl, 'bowl-side')
+    }
+    
+    const apples = document.querySelectorAll('[data-add-sides="apple"]')
+    for (let apple of apples) {
+        addSides(apple, 'apple-side')
     }
 }
 
@@ -49,12 +60,12 @@ function generateSteveElement(index) {
     
     steve.innerHTML = `
         <div class="steve-body steve-body__animation-${randomAnimation}" style="--animation-multiplier: ${intervalAnimationMultiplier}">
-          <div class="steve-body__torso" data-add-sides>
-            <div class="steve-body__head" data-add-sides></div>
-            <div class="steve-body__right-hand" data-add-sides></div>
-            <div class="steve-body__left-hand" data-add-sides></div>
-            <div class="steve-body__right-leg" data-add-sides></div>
-            <div class="steve-body__left-leg" data-add-sides></div>
+          <div class="steve-body__torso" data-add-sides="steve">
+            <div class="steve-body__head" data-add-sides="steve"></div>
+            <div class="steve-body__right-hand" data-add-sides="steve"></div>
+            <div class="steve-body__left-hand" data-add-sides="steve"></div>
+            <div class="steve-body__right-leg" data-add-sides="steve"></div>
+            <div class="steve-body__left-leg" data-add-sides="steve"></div>
           </div>
         </div>
     `
@@ -62,11 +73,11 @@ function generateSteveElement(index) {
     return steve
 }
 
-function addSides(item) {
+function addSides(item, className = 'steve-body__side') {
     for (let side of ['front', 'back', 'top', 'bottom', 'left', 'right']) {
         const sideElement = document.createElement('div')
-        sideElement.classList.add('steve-body__side')
-        sideElement.classList.add(`steve-body__side-${side}`)
+        sideElement.classList.add(className)
+        sideElement.classList.add(`${className}-${side}`)
         
         item.append(sideElement)
     }

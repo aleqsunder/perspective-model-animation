@@ -6,7 +6,7 @@
 
   & > .steve {
     position: absolute;
-    transform: rotateY(calc((360deg / var(--items-count)) * var(--item-id))) translateZ(560px);
+    transform: rotateY(calc((360deg / var(--items-count)) * var(--item-id))) translateZ(600px);
     transform-style: preserve-3d;
     transform-origin: center;
   }
@@ -14,15 +14,11 @@
 
 .steve {
   transform-style: preserve-3d;
-  transition: transform 1s;
-
   image-rendering: pixelated;
-  zoom: .6;
 
   & * {
     transform-style: preserve-3d;
     transform-origin: center center;
-    transition: transform 1s;
   }
 
   &-default &-body__side {

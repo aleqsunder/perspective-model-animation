@@ -1,0 +1,79 @@
+.steve-body {
+  &__animation-sitting & {
+    &__torso {
+      animation: sitting-torso calc(2s * var(--animation-multiplier)) ease-in-out infinite;
+    }
+
+    &__head {
+      animation: sitting-head-shaking calc(5s * var(--animation-multiplier)) ease-in-out infinite;
+    }
+
+    &__right-leg {
+      animation: sitting-right-leg calc(2s * var(--animation-multiplier)) ease-in-out infinite;
+    }
+
+    &__left-leg {
+      animation: sitting-left-leg calc(2s * var(--animation-multiplier)) ease-in-out infinite;
+    }
+
+    &__right-hand {
+      animation: sitting-right-hand calc(2s * var(--animation-multiplier)) ease-in-out infinite;
+    }
+
+    &__left-hand {
+      animation: sitting-left-hand calc(2s * var(--animation-multiplier)) ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes sitting-torso {
+  0%, 100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0rem) translateY(12rem) translateZ(0rem);
+  }
+}
+
+@keyframes sitting-head-shaking {
+  0%, 100% {
+    transform: rotateX(20deg) rotateY(30deg) rotateZ(10deg) translateY(-8rem);
+  }
+
+  50% {
+    transform: rotateX(-20deg) rotateY(0deg) rotateZ(10deg) translateY(-8rem);
+  }
+}
+
+@keyframes sitting-right-leg {
+  0%, 100% {
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(-10deg) translateY(12rem) translateX(4rem);
+  }
+}
+
+@keyframes sitting-left-leg {
+  0%, 100% {
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(10deg) translateY(12rem);
+  }
+}
+
+@keyframes sitting-right-hand {
+  0%, 60%, 100% {
+    transform: rotateX(-80deg) rotateY(-30deg) rotateZ(10deg) translateX(8rem);
+  }
+
+  40% {
+    transform: rotateX(-110deg) rotateY(-30deg) rotateZ(10deg) translateX(8rem);
+  }
+
+  50% {
+    transform: rotateX(-80deg) rotateY(-20deg) rotateZ(10deg) translateX(8rem);
+  }
+
+  53% {
+    transform: rotateX(-90deg) rotateY(-10deg) rotateZ(10deg) translateX(8rem);
+  }
+}
+
+@keyframes sitting-left-hand {
+  0%, 100% {
+    transform: rotateX(-80deg) rotateY(30deg) rotateZ(30deg) translateX(-4rem);
+  }
+}

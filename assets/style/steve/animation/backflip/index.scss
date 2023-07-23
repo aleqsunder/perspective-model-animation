@@ -1,0 +1,78 @@
+.steve-body {
+  &__animation-backflip & {
+    &__torso {
+      animation: backflip-torso 1.7s linear infinite;
+    }
+
+    &__right-leg {
+      animation: backflip-right-leg 1.7s ease-in infinite;
+    }
+
+    &__left-leg {
+      animation: backflip-left-leg 1.7s ease-in infinite;
+    }
+
+    &__right-hand {
+      animation: backflip-right-hand 1.7s ease-in infinite;
+    }
+
+    &__left-hand {
+      animation: backflip-left-hand 1.7s ease-in infinite;
+    }
+
+    &__head {
+      animation: nodding 3s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes backflip-torso {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0rem) translateY(0rem) translateZ(0rem) }
+  20% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0rem) translateY(0rem) translateZ(0rem) }
+  30% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0rem) translateY(-4rem) translateZ(0rem) }
+  45% { transform: rotateX(40deg) rotateY(0deg) rotateZ(0deg) translateX(0rem) translateY(-6rem) translateZ(0rem) }
+  50% { transform: rotateX(85deg) rotateY(0deg) rotateZ(0deg) translateX(0rem) translateY(-7rem) translateZ(0rem) }
+  57% { transform: rotateX(140deg) rotateY(0deg) rotateZ(0deg) translateX(0rem) translateY(-6rem) translateZ(0rem) }
+  67% { transform: rotateX(260deg) rotateY(0deg) rotateZ(0deg) translateX(0rem) translateY(-4rem) translateZ(0rem) }
+  81%, 100% { transform: rotateX(360deg) rotateY(0deg) rotateZ(0deg) translateX(0rem) translateY(0rem) translateZ(0rem) }
+}
+
+@keyframes backflip-right-leg {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) translateX(4rem) }
+  20% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) translateX(4rem) }
+  35% { transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) translateX(4rem) }
+  50% { transform: rotateX(-105deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) translateX(4rem)}
+  65% { transform: rotateX(-95deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) translateX(4rem) }
+  80% { transform: rotateX(-68deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) translateX(4rem) }
+  100% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) translateX(4rem) }
+}
+
+@keyframes backflip-left-leg {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) }
+  20% { transform: rotateX(-45deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) }
+  35% { transform: rotateX(-72deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) }
+  50% { transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) }
+  65% { transform: rotateX(-108deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) }
+  80% { transform: rotateX(-79deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) }
+  100% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(12rem) }
+}
+
+@keyframes backflip-right-hand {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(8rem) }
+  20% { transform: rotateX(-42deg) rotateY(12deg) rotateZ(-10deg) translateX(8rem) }
+  35% { transform: rotateX(-72deg) rotateY(14deg) rotateZ(-10deg) translateX(8rem) }
+  50% { transform: rotateX(-11deg) rotateY(0deg) rotateZ(-5deg) translateX(8rem) }
+  65% { transform: rotateX(-59deg) rotateY(10deg) rotateZ(10deg) translateX(8rem) }
+  80% { transform: rotateX(-84deg) rotateY(5deg) rotateZ(6deg) translateX(8rem) }
+  100% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(8rem) }
+}
+
+@keyframes backflip-left-hand {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(-4rem) }
+  20% { transform: rotateX(-32deg) rotateY(8deg) rotateZ(10deg) translateX(-4rem) }
+  35% { transform: rotateX(-56deg) rotateY(17deg) rotateZ(10deg) translateX(-4rem) }
+  50% { transform: rotateX(-23deg) rotateY(10deg) rotateZ(5deg) translateX(-4rem) }
+  65% { transform: rotateX(-35deg) rotateY(7deg) rotateZ(-10deg) translateX(-4rem) }
+  80% { transform: rotateX(-68deg) rotateY(0deg) rotateZ(-6deg) translateX(-4rem) }
+  100% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(-4rem) }
+}

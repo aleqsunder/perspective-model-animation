@@ -1,0 +1,59 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  width: 100vw;
+  height: 100vh;
+
+  font-family: monospace;
+
+  background-color: #998bb2;
+}
+
+@keyframes rotate {
+  0% {
+    transform: perspective(1000px) rotateX(-14deg) rotateY(360deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(-14deg) rotateY(0deg);
+  }
+}
+
+#root {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(-12deg) rotateY(360deg);
+  animation: rotate 18s linear infinite;
+}
+
+.floor, .backfloor {
+  position: absolute;
+  width: 70rem;
+  height: 70rem;
+
+  transform-style: preserve-3d;
+  clip-path: circle(50%);
+}
+
+.floor {
+  background: url('/texture.png') repeat center center;
+  background-size: 16rem 16rem;
+  image-rendering: pixelated;
+  transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-15rem);
+}
+
+.backfloor {
+  background: #333;
+  transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-17rem);
+}
+
+@import "steve";
+@import 'steve/animation';

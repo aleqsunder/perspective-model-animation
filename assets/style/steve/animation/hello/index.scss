@@ -1,0 +1,22 @@
+.steve-body {
+  &__animation-hello & {
+    &__right-hand {
+      animation: hello 1.8s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes hello {
+  0%, 100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(8rem);
+  }
+  30% {
+    transform: rotateX(-10deg) rotateY(0deg) rotateZ(-10deg) translateX(8rem);
+  }
+  45% {
+    transform: rotateX(-100deg) rotateY(0deg) rotateZ(-14deg) translateX(8rem);
+  }
+  70% {
+    transform: rotateX(-95deg) rotateY(0deg) rotateZ(-8deg) translateX(8rem);
+  }
+}

@@ -1,0 +1,29 @@
+.steve-body {
+  &__animation-scratch-nose & {
+    &__head {
+      animation: scratch-nose-head 2.3s ease-in-out infinite;
+    }
+
+    &__right-hand {
+      animation: scratch-nose-right-head 2.3s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes scratch-nose-head {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-8rem) }
+  20% { transform: rotateX(0deg) rotateY(-6deg) rotateZ(10deg) translateY(-8rem) }
+  36% { transform: rotateX(10deg) rotateY(-6deg) rotateZ(10deg) translateY(-8rem) }
+  48% { transform: rotateX(-10deg) rotateY(-6deg) rotateZ(10deg) translateY(-8rem) }
+  65% { transform: rotateX(10deg) rotateY(-6deg) rotateZ(10deg) translateY(-8rem) }
+  80%, 100% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-8rem) }
+}
+
+@keyframes scratch-nose-right-head {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(8rem) }
+  20% { transform: rotateX(-10deg) rotateY(-10deg) rotateZ(10deg) translateX(8rem) }
+  40% { transform: rotateX(-130deg) rotateY(-10deg) rotateZ(30deg) translateX(8rem) }
+  48% { transform: rotateX(-110deg) rotateY(-5deg) rotateZ(50deg) translateX(8rem) }
+  65% { transform: rotateX(-130deg) rotateY(-10deg) rotateZ(30deg) translateX(8rem) }
+  80%, 100% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(8rem) }
+}

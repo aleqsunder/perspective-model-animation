@@ -1,0 +1,22 @@
+.steve-body {
+  &__animation-nodding & {
+    &__head {
+      animation: nodding 3s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes nodding {
+  0%, 100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-8rem);
+  }
+  35% {
+    transform: rotateX(-12deg) rotateY(0deg) rotateZ(0deg) translateY(-8rem);
+  }
+  50% {
+    transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg) translateY(-8rem);
+  }
+  67% {
+    transform: rotateX(-6deg) rotateY(0deg) rotateZ(0deg) translateY(-8rem);
+  }
+}
